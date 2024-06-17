@@ -9,6 +9,7 @@ function App() {
         </div>
     );
 }
+
 export default App;
 const Title = styled.h1`
     font-size: 1.5em;
