@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-
-import {myTheme} from "../../styles/Theme.styled";
 import {Logo} from "../../components/logo/Logo";
 import {Menu} from "../../components/menu/Menu";
 import {Container} from "../../components/container";
@@ -22,5 +20,6 @@ export const Header = () => {
 
 const StyledHeader = styled.header`
     //background-color: myTheme.colors.dark;
+    margin-top: 30px;
 
 `
