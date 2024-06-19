@@ -1,4 +1,5 @@
 import {createGlobalStyle} from "styled-components";
+import {myTheme} from "./Theme.styled";
 
 export const GlobalStyles  = createGlobalStyle`
     *,
@@ -8,8 +9,7 @@ export const GlobalStyles  = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
-    
-    body {
-        background-color: #131313;
+    body{
+        background-color: ${myTheme.colors.dark};
     }
 `
