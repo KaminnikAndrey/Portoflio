@@ -6,6 +6,7 @@ type ContainerPropsType =  {
     minHeight?: string
     paddingTop?: string
     paddingBottom?: string
+    borderTop?: string
 }
 
 export const Container = styled.div<ContainerPropsType>`
@@ -14,4 +15,5 @@ export const Container = styled.div<ContainerPropsType>`
     margin: 0 auto;
     padding-top: ${props => props.paddingTop || '0'};
     padding-bottom: ${props => props.paddingBottom || '0'};
+    border-top: ${props => props.borderTop || '0'};
 `

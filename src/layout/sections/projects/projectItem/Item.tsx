@@ -14,7 +14,7 @@ type ItemPropsType = {
 
 export const Item = (props: ItemPropsType) => {
     return (
-        <StyledItem>
+        <StyledItem as={'li'}>
             <FlexWrapper direction={'column'}>
                 <Image src={props.src} alt="project picture"/>
                 <Title>{props.title}</Title>

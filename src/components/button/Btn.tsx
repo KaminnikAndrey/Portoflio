@@ -14,7 +14,7 @@ type LinkPropsType = {
 export const Btn = ({text, border = 'purple'}: BtnPropsType) => {
 
     return (
-        <Link href={'#'} border={border}>${text}</Link>
+        <Link href={'#'} border={border}>{text}</Link>
     );
 };
 

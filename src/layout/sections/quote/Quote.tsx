@@ -6,7 +6,7 @@ import {myTheme} from "../../../styles/Theme.styled";
 
 export const Quote = () => {
     return (
-        <Container maxWidth={'710px'} paddingTop={'110px'} paddingBottom={'75px'}>
+        <Container maxWidth={'710px'} paddingTop={'110px'} paddingBottom={'75px'} as={'section'}>
             <FlexWrapper direction={'column'} align={'flex-end'}>
                 <Q>
                     With great power comes great electricity bill

@@ -36,7 +36,7 @@ const SkillsArray = [
 
 export const Skills = () => {
     return (
-        <Container paddingBottom={'110px'}>
+        <Container paddingBottom={'110px'} as={'section'}>
             <SectionTitle text={'skills'}/>
             <FlexWrapper justify={'space-between'} margin={'15px 0 0 0'}>
                 <StyledImax src={img}/>

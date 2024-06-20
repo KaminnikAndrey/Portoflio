@@ -8,7 +8,7 @@ import {Btn} from "../../../components/button/Btn";
 
 export const Main = () => {
     return (
-        <Container minHeight={'420px'}>
+        <Container minHeight={'420px'} as={'section'}>
             <FlexWrapper justify={'space-between'} align={'center'}>
                 <FlexWrapper direction={'column'}>
                     <Title>
