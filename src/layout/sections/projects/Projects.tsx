@@ -38,22 +38,21 @@ const projectsList: Array<projectsListType> = [{
 }]
 
 export const Projects = () => {
+    const project = projectsList.map(({src, text, btn, title, name}: projectsListType) =>
+         <Item src={src}
+               title={title}
+               name={name}
+               text={text}
+               btn={btn}/>
+    )
+
     return (
         <Container paddingBottom={'105px'} as={'section'}>
             <FlexWrapper justify={'space-between'}>
                 <SectionTitle text={'projects'}/>
                 <Btn text={'View all ~~>'} border={'none'}/>
             </FlexWrapper>
-            <FlexWrapper margin={'50px 0 0 0 '} gap={'15px'} as={'ul'}>
-                {projectsList.map((project: projectsListType) => {
-                    return <Item src={project.src}
-                                 title={project.title}
-                                 name={project.name}
-                                 text={project.text}
-                                 btn={project.btn}
-                    />
-                })}
-            </FlexWrapper>
+            <FlexWrapper margin={'50px 0 0 0 '} gap={'15px'} as={'ul'}>{project}</FlexWrapper>
         </Container>
     );
 };

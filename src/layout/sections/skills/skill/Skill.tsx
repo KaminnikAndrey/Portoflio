@@ -9,13 +9,13 @@ type SkillPropsType = {
 }
 
 export const Skill = (props: SkillPropsType) => {
+    const {title, text} = props
+
     return (
         <FlexWrapper direction={'column'}>
-            <Title>
-                {props.title}
-            </Title>
+            <Title>{title}</Title>
             <FlexWrapper direction={'column'} border={`1px solid ${myTheme.colors.grey}`} gap={'8px'} padding={'8px'}>
-                {props.text.map((skill: string) => {
+                {text.map((skill: string) => {
                     return <Text>{skill}</Text>
                 })}
             </FlexWrapper>

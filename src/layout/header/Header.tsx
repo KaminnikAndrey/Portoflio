@@ -19,7 +19,5 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-    //background-color: myTheme.colors.dark;
     margin-top: 30px;
-
 `
