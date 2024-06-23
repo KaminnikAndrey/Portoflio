@@ -42,7 +42,6 @@ const Title = styled.h2<StyledTitlePropsType>`
         width: ${props => props.width};
         display: block;
         top: 20.5px;
-        
         left: calc(100% + 15px);
     }
 `

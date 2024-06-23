@@ -31,4 +31,8 @@ const Q = styled.p`
         padding: 16px;
     }
     
+    //&::after{
+    //    content: ;
+    //}
+    
 `
