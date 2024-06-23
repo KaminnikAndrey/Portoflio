@@ -35,9 +35,14 @@ const Link = styled.a`
     font-weight: 400;
     color: ${myTheme.colors.grey};
     text-align: center;
+    transition: 0.3s;
 
     span {
         font-weight: 500;
         color: ${myTheme.colors.purple}
+    }
+    
+    &:hover{
+        color: ${myTheme.colors.white}
     }
 `

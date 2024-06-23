@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container} from "../../../components/container";
+import {Container} from "../../../components/Container";
 import {SectionTitle} from "../../../components/SectionTitle";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import styled from "styled-components";
@@ -11,7 +11,7 @@ import {Icon} from "../../../components/icon/Icon";
 export const Contacts = () => {
     return (
         <Container as={'section'} paddingBottom={'145px'}>
-            <SectionTitle text={'contacts'}/>
+            <SectionTitle text={'contacts'} lineWidth={'190px'}/>
             <FlexWrapper justify={'space-between'} margin={'45px 0 0 0'}>
                 <Text>I’m interested in freelance opportunities. However, if you have other request or question, don’t
                     hesitate to contact me</Text>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container} from "../../../components/container";
+import {Container} from "../../../components/Container";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Btn} from "../../../components/button/Btn";
 import {SectionTitle} from "../../../components/SectionTitle";
@@ -49,7 +49,7 @@ export const Projects = () => {
     return (
         <Container paddingBottom={'105px'} as={'section'}>
             <FlexWrapper justify={'space-between'}>
-                <SectionTitle text={'projects'}/>
+                <SectionTitle text={'projects'} lineWidth={'510px'}/>
                 <Btn text={'View all ~~>'} border={'none'}/>
             </FlexWrapper>
             <FlexWrapper margin={'50px 0 0 0 '} gap={'15px'} as={'ul'}>{project}</FlexWrapper>

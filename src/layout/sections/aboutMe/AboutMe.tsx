@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container} from "../../../components/container";
+import {Container} from "../../../components/Container";
 import {SectionTitle} from "../../../components/SectionTitle";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import styled from "styled-components";
@@ -12,7 +12,7 @@ export const AboutMe = () => {
         <Container as={'section'}   paddingBottom={'110px'}>
             <FlexWrapper justify={'space-between'}>
                 <div>
-                    <SectionTitle text={'about-me'}/>
+                    <SectionTitle text={'about-me'} lineWidth={'326px'}/>
                     <FlexWrapper margin={'25px 0 0 0'} direction={'column'} maxWidth={'515px'}>
                         <Text>
                             Hello, i’m Elias!

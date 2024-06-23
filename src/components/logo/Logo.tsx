@@ -22,4 +22,6 @@ const StyledLogo = styled.a`
         line-height: 1.3;
         color: ${myTheme.colors.white};
     }
+    
+    &:hover{}
 `

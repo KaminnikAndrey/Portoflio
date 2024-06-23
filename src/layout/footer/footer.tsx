@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container} from "../../components/container";
+import {Container} from "../../components/Container";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import {Logo} from "../../components/logo/Logo";
 import {myTheme} from "../../styles/Theme.styled";
@@ -8,34 +8,36 @@ import {Icon} from "../../components/icon/Icon";
 
 export const Footer = () => {
     return (
-        <Container as={'footer'} paddingTop={'30px'} paddingBottom={'30px'}>
-            <FlexWrapper justify={'space-between'}>
-                <div>
-                    <FlexWrapper gap={'25px'} margin={'0 0 15px 0 '}>
-                        <Logo/>
-                        <Link href={'#'}>elias@elias-dev.ml</Link>
-                    </FlexWrapper>
-                    <Title>Web designer and front-end developer</Title>
-                </div>
-                <FlexWrapper direction={'column'} gap={'15px'}>
-                    <BigTitle>
-                        Media
-                    </BigTitle>
-                    <FlexWrapper gap={'8px'}>
-                        <a href="#">
-                            <Icon iconId={'github'} width={'32px'} height={'32px'}/>
-                        </a>
-                        <a href="#">
-                            <Icon iconId={'figma'} width={'32px'} height={'32px'}/>
-                        </a>
-                        <a href="#">
-                            <Icon iconId={'discord'} width={'32px'} height={'32px'}/>
-                        </a>
+        <StyledFooter>
+            <Container paddingTop={'30px'} paddingBottom={'30px'}>
+                <FlexWrapper justify={'space-between'}>
+                    <div>
+                        <FlexWrapper gap={'25px'} margin={'0 0 15px 0 '}>
+                            <Logo/>
+                            <Link href={'#'}>elias@elias-dev.ml</Link>
+                        </FlexWrapper>
+                        <Title>Web designer and front-end developer</Title>
+                    </div>
+                    <FlexWrapper direction={'column'} gap={'15px'}>
+                        <BigTitle>
+                            Media
+                        </BigTitle>
+                        <FlexWrapper gap={'8px'}>
+                            <a href="#">
+                                <Icon iconId={'github'} width={'32px'} height={'32px'}/>
+                            </a>
+                            <a href="#">
+                                <Icon iconId={'figma'} width={'32px'} height={'32px'}/>
+                            </a>
+                            <a href="#">
+                                <Icon iconId={'discord'} width={'32px'} height={'32px'}/>
+                            </a>
+                        </FlexWrapper>
                     </FlexWrapper>
                 </FlexWrapper>
-            </FlexWrapper>
-            <Text>© Copyright 2022. Made by Elias</Text>
-        </Container>
+                <Text>© Copyright 2022. Made by Elias</Text>
+            </Container>
+        </StyledFooter>
     );
 };
 
@@ -65,4 +67,7 @@ const Text = styled.p`
     text-align: center;
 `
 
+const StyledFooter = styled.footer`
+    border-top: 1px solid ${myTheme.colors.grey}
+`
 

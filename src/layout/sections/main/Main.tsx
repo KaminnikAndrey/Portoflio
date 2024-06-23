@@ -2,13 +2,12 @@ import React from 'react';
 import styled from "styled-components";
 import photo from '../../../assets/images/photoTop.png'
 import {FlexWrapper} from "../../../components/FlexWrapper";
-import {Container} from "../../../components/container";
+import {Container} from "../../../components/Container";
 import {myTheme} from "../../../styles/Theme.styled";
 import {Btn} from "../../../components/button/Btn";
-
 export const Main = () => {
     return (
-        <Container minHeight={'420px'} as={'section'}>
+        <Container minHeight={'420px'} as={'section'} paddingTop={'80px'}>
             <FlexWrapper justify={'space-between'} align={'center'}>
                 <FlexWrapper direction={'column'}>
                     <Title>
@@ -20,7 +19,9 @@ export const Main = () => {
                     <Btn text={'Contact me!!'}/>
                 </FlexWrapper>
                 <div>
-                    <Photo src={photo}/>
+                    <PhotoWrapper>
+                        <Photo src={photo}/>
+                    </PhotoWrapper>
                     <TextBold>
                         Currently working on <strong>Portfolio</strong>
                     </TextBold>
@@ -30,6 +31,20 @@ export const Main = () => {
     );
 };
 
+const PhotoWrapper = styled.div`
+    position: relative;
+    
+    &::before{
+        content: '';
+        width: 155px;
+        height: 155px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: red;
+    }
+`
+
 const Photo = styled.img`
     width: 460px;
     height: 385px;
@@ -37,7 +52,7 @@ const Photo = styled.img`
 `
 
 const Title = styled.h1`
-    font-size: 42px;
+    font-size: 32px;
     font-weight: 600;
     text-align: left;
     max-width: 540px;
@@ -55,7 +70,7 @@ const Text = styled.p`
     color: ${myTheme.colors.grey};
     margin-bottom: 25px;
     text-align: left;
-    max-width: 460px;
+    max-width: 480px;
     font-weight: 400;
 `
 
@@ -69,9 +84,21 @@ const TextBold = styled.p`
     padding: 8px 80px 8px 34px;
     border: 1px solid ${myTheme.colors.grey};
     text-align: left;
-    
-    strong{
+    position: relative;
+
+    strong {
         font-weight: 600;
         color: ${myTheme.colors.white};
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        display: block;
+        background-color: ${myTheme.colors.purple};
+        top: 11px;
+        left: 10px;
     }
 `
