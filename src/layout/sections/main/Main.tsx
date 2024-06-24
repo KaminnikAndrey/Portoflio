@@ -5,6 +5,7 @@ import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Container} from "../../../components/Container";
 import {myTheme} from "../../../styles/Theme.styled";
 import {Btn} from "../../../components/button/Btn";
+import {Icon} from "../../../components/icon/Icon";
 export const Main = () => {
     return (
         <Container minHeight={'420px'} as={'section'} paddingTop={'80px'}>
@@ -21,6 +22,8 @@ export const Main = () => {
                 <div>
                     <PhotoWrapper>
                         <Photo src={photo}/>
+                        <Icon iconId={'mainIcon'} width={'160px'} height={'160px'} position={'absolute'} left={'-5px'} top={'80px'} zIndex={'-1'}/>
+                        <Icon iconId={'dots'} width={'85px'} height={'85px'} position={'absolute'} right={'15px'} bottom={'55px'} zIndex={'1'}/>
                     </PhotoWrapper>
                     <TextBold>
                         Currently working on <strong>Portfolio</strong>
@@ -33,16 +36,6 @@ export const Main = () => {
 
 const PhotoWrapper = styled.div`
     position: relative;
-    
-    &::before{
-        content: '';
-        width: 155px;
-        height: 155px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: red;
-    }
 `
 
 const Photo = styled.img`

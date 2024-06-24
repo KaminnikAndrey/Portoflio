@@ -7,6 +7,8 @@ import {Item} from "./projectItem/Item";
 import img1 from '../../../assets/images/chertNodes.jpg'
 import img2 from '../../../assets/images/protectX.jpg'
 import img3 from '../../../assets/images/kahoot.jpg'
+import {Section} from "../../../components/section/Section";
+import {Icon} from "../../../components/icon/Icon";
 
 
 type projectsListType = {
@@ -39,20 +41,23 @@ const projectsList: Array<projectsListType> = [{
 
 export const Projects = () => {
     const project = projectsList.map(({src, text, btn, title, name}: projectsListType) =>
-         <Item src={src}
-               title={title}
-               name={name}
-               text={text}
-               btn={btn}/>
+        <Item src={src}
+              title={title}
+              name={name}
+              text={text}
+              btn={btn}/>
     )
 
     return (
-        <Container paddingBottom={'105px'} as={'section'}>
-            <FlexWrapper justify={'space-between'}>
-                <SectionTitle text={'projects'} lineWidth={'510px'}/>
-                <Btn text={'View all ~~>'} border={'none'}/>
-            </FlexWrapper>
-            <FlexWrapper margin={'50px 0 0 0 '} gap={'15px'} as={'ul'}>{project}</FlexWrapper>
-        </Container>
+        <Section>
+            <Icon iconId={'squareBg'} width={'155px'} height={'155px'} position={'absolute'} right={'-80px'} top={'270px'}/>
+            <Container paddingBottom={'105px'}>
+                <FlexWrapper justify={'space-between'}>
+                    <SectionTitle text={'projects'} lineWidth={'510px'}/>
+                    <Btn text={'View all ~~>'} border={'none'}/>
+                </FlexWrapper>
+                <FlexWrapper margin={'50px 0 0 0 '} gap={'15px'} as={'ul'}>{project}</FlexWrapper>
+            </Container>
+        </Section>
     );
 };
