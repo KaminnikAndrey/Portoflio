@@ -9,7 +9,7 @@ import {Icon} from "../../components/icon/Icon";
 export const Footer = () => {
     return (
         <StyledFooter>
-            <Container paddingTop={'30px'} paddingBottom={'30px'}>
+            <Container>
                 <FlexWrapper justify={'space-between'}>
                     <div>
                         <FlexWrapper gap={'25px'} margin={'0 0 15px 0 '}>
@@ -23,15 +23,15 @@ export const Footer = () => {
                             Media
                         </BigTitle>
                         <FlexWrapper gap={'8px'}>
-                            <a href="#">
+                            <Link href="#">
                                 <Icon iconId={'github'} width={'32px'} height={'32px'}/>
-                            </a>
-                            <a href="#">
+                            </Link>
+                            <Link href="#">
                                 <Icon iconId={'figma'} width={'32px'} height={'32px'}/>
-                            </a>
-                            <a href="#">
+                            </Link>
+                            <Link href="#">
                                 <Icon iconId={'discord'} width={'32px'} height={'32px'}/>
-                            </a>
+                            </Link>
                         </FlexWrapper>
                     </FlexWrapper>
                 </FlexWrapper>
@@ -45,6 +45,11 @@ const Link = styled.a`
     font-size: 16px;
     font-weight: 400;
     color: ${myTheme.colors.grey};
+    transition: 0.2s;
+
+    &:hover {
+        color: ${myTheme.colors.white};
+    }
 `
 
 const Title = styled.h3`
@@ -68,6 +73,7 @@ const Text = styled.p`
 `
 
 const StyledFooter = styled.footer`
-    border-top: 1px solid ${myTheme.colors.grey}
+    border-top: 1px solid ${myTheme.colors.grey};
+    padding: 30px 0;
 `
 

@@ -29,7 +29,7 @@ export const GlobalStyles  = createGlobalStyle`
         font-family: "Fira Code", monospace;
         font-style: normal;
         font-optical-sizing: auto;
-
+        overflow-x: hidden;
         line-height: 1.3;
     }
 

@@ -9,7 +9,7 @@ import {myTheme} from "../../styles/Theme.styled";
 export const Header = () => {
     return (
         <StyledHeader>
-            <Container paddingTop={'30px'}>
+            <Container>
                 <FlexWrapper justify={'space-between'}>
                     <Logo/>
                     <Menu/>
@@ -29,4 +29,5 @@ const StyledHeader = styled.header`
     background: ${myTheme.colors.dark};
     width: 100%;
     height: 80px;
+    padding-top: 30px;
 `

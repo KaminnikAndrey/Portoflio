@@ -16,12 +16,23 @@ export const Logo = () => {
 };
 
 const StyledLogo = styled.a`
+    color: ${myTheme.colors.white};
+    transition: 0.2s;
     span {
         font-weight: 700;
         font-size: 16px;
         line-height: 1.3;
+        transition: 0.2s;
+
         color: ${myTheme.colors.white};
     }
-    
-    &:hover{}
+
+    &:hover {
+        color: ${myTheme.colors.purple}
+    }
+
+    &:hover span {
+        color: ${myTheme.colors.purple}
+    }
+}
 `

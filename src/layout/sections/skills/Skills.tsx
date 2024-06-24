@@ -5,6 +5,7 @@ import {SectionTitle} from "../../../components/SectionTitle";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import img from "../../../assets/images/skillsImg.png"
 import {Skill} from "./skill/Skill";
+import {Section} from "../../../components/Section";
 
 type SkillsPropsType = {
     title: string
@@ -38,28 +39,30 @@ const SkillsArray = [
 ]
 
 const getSkillsLayout = (skillSection: SkillsPropsType) => {
-       return <FlexWrapper direction={'column'} gap={'25px'}>
-           {skillSection.map((skill: SkillPropsType) => {
-               return <Skill title={skill.title} text={skill.text}/>
-           })}
-       </FlexWrapper>
+    return <FlexWrapper direction={'column'} gap={'25px'}>
+        {skillSection.map((skill: SkillPropsType) => {
+            return <Skill title={skill.title} text={skill.text}/>
+        })}
+    </FlexWrapper>
 }
 
 
 export const Skills = () => {
 
     return (
-        <Container paddingBottom={'110px'} as={'section'}>
-            <SectionTitle text={'skills'} lineWidth={'240px'}/>
-            <FlexWrapper justify={'space-between'} margin={'15px 0 0 0'}>
-                <StyledImax src={img}/>
-                <FlexWrapper gap={'15px'} margin={'45px 0 0 0'}>
-                    {SkillsArray.map((skillSection: SkillsPropsType) => {
-                        return getSkillsLayout(skillSection)
-                    })}
+        <Section paddingBottom={'110px'}>
+            <Container>
+                <SectionTitle text={'skills'} lineWidth={'240px'}/>
+                <FlexWrapper justify={'space-between'} margin={'15px 0 0 0'}>
+                    <StyledImax src={img}/>
+                    <FlexWrapper gap={'15px'} margin={'45px 0 0 0'}>
+                        {SkillsArray.map((skillSection: SkillsPropsType) => {
+                            return getSkillsLayout(skillSection)
+                        })}
+                    </FlexWrapper>
                 </FlexWrapper>
-            </FlexWrapper>
-        </Container>
+            </Container>
+        </Section>
     )
         ;
 };

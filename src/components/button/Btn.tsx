@@ -28,4 +28,13 @@ const Link = styled.a<LinkPropsType>`
             props.border === 'purple' ? `1px solid ${myTheme.colors.purple}` :
                     props.border === 'gray' ? `1px solid ${myTheme.colors.grey}` : 'none'};
     width: fit-content;
+    transition: 0.2s;
+    
+    &:hover{
+        background-color: ${props => props.border === 'purple' ?  'rgba(199, 120, 221, 0.2)' : props.border === 'gray' ? 'rgba(171, 178, 191, 0.2)': 'none'}
+    }
+
+    &:hover{
+        transform: ${props => props.border === 'none' ? 'translateY(-2px)' : 'none'};
+    }
 `
