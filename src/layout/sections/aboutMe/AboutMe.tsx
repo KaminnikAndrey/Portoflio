@@ -55,7 +55,7 @@ const ImageWrapper = styled.div`
     &::before {
         content: url("https://raw.githubusercontent.com/KaminnikAndrey/Portoflio/1ca626a6970d22f807ddb943caf7b5287a825334/src/assets/images/Dots.svg");
         width: 105px;
-        height: 65px;
+        height: 55px;
         object-fit: contain;
         position: absolute;
         display: block;
