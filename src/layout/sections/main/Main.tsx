@@ -5,62 +5,43 @@ import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Container} from "../../../components/Container";
 import {myTheme} from "../../../styles/Theme.styled";
 import {Btn} from "../../../components/button/Btn";
-import {Icon} from "../../../components/icon/Icon";
-import {Section} from "../../../components/Section";
-
 export const Main = () => {
     return (
-        <Section paddingTop={'80px'}>
-            <Container minHeight={'420px'}>
-                <FlexWrapper justify={'space-between'} align={'center'}>
-                    <FlexWrapper direction={'column'}>
-                        <Title>
-                            <span>Elias is a</span> web designer <span>and</span> front-end developer
-                        </Title>
-                        <Text>
-                            He crafts responsive websites where technologies meet creativity
-                        </Text>
-                        <Btn text={'Contact me!!'}/>
-                    </FlexWrapper>
-                    <div>
-                        <PhotoWrapper>
-                            <Photo src={photo}/>
-
-                        </PhotoWrapper>
-                        <TextBold>
-                            Currently working on <strong>Portfolio</strong>
-                        </TextBold>
-                    </div>
+        <Container minHeight={'420px'} as={'section'} paddingTop={'80px'}>
+            <FlexWrapper justify={'space-between'} align={'center'}>
+                <FlexWrapper direction={'column'}>
+                    <Title>
+                        <span>Elias is a</span> web designer <span>and</span> front-end developer
+                    </Title>
+                    <Text>
+                        He crafts responsive websites where technologies meet creativity
+                    </Text>
+                    <Btn text={'Contact me!!'}/>
                 </FlexWrapper>
-            </Container>
-        </Section>
-
+                <div>
+                    <PhotoWrapper>
+                        <Photo src={photo}/>
+                    </PhotoWrapper>
+                    <TextBold>
+                        Currently working on <strong>Portfolio</strong>
+                    </TextBold>
+                </div>
+            </FlexWrapper>
+        </Container>
     );
 };
 
 const PhotoWrapper = styled.div`
     position: relative;
     
-    &::before {
-        content: url("https://raw.githubusercontent.com/KaminnikAndrey/Portoflio/main/src/assets/images/mainIcon.svg");
+    &::before{
+        content: '';
+        width: 155px;
+        height: 155px;
         position: absolute;
-        display: block;
-        width: 160px;
-        height: 160px;
-        left: -5px;
-        top: 80px;
-        z-index: -1;
-    }
-
-    &::after {
-        content: url("https://raw.githubusercontent.com/KaminnikAndrey/Portoflio/main/src/assets/images/Dots.svg");
-        position: absolute;
-        display: block;
-        width: 85px;
-        height: 85px;
-        right: 15px;
-        bottom: 55px;
-        z-index: 1;
+        top: 0;
+        left: 0;
+        background: red;
     }
 `
 
