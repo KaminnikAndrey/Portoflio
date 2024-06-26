@@ -5,43 +5,60 @@ import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Container} from "../../../components/Container";
 import {myTheme} from "../../../styles/Theme.styled";
 import {Btn} from "../../../components/button/Btn";
+
 export const Main = () => {
     return (
-        <Container minHeight={'420px'} as={'section'} paddingTop={'80px'}>
-            <FlexWrapper justify={'space-between'} align={'center'}>
-                <FlexWrapper direction={'column'}>
-                    <Title>
-                        <span>Elias is a</span> web designer <span>and</span> front-end developer
-                    </Title>
-                    <Text>
-                        He crafts responsive websites where technologies meet creativity
-                    </Text>
-                    <Btn text={'Contact me!!'}/>
+        <MainSection>
+            <Container minHeight={'420px'}>
+                <FlexWrapper justify={'space-between'} align={'center'}>
+                    <FlexWrapper direction={'column'}>
+                        <Title>
+                            <span>Elias is a</span> web designer <span>and</span> front-end developer
+                        </Title>
+                        <Text>
+                            He crafts responsive websites where technologies meet creativity
+                        </Text>
+                        <Btn text={'Contact me!!'}/>
+                    </FlexWrapper>
+                    <div>
+                        <PhotoWrapper>
+                            <Photo src={photo}/>
+                        </PhotoWrapper>
+                        <TextBold>
+                            Currently working on <strong>Portfolio</strong>
+                        </TextBold>
+                    </div>
                 </FlexWrapper>
-                <div>
-                    <PhotoWrapper>
-                        <Photo src={photo}/>
-                    </PhotoWrapper>
-                    <TextBold>
-                        Currently working on <strong>Portfolio</strong>
-                    </TextBold>
-                </div>
-            </FlexWrapper>
-        </Container>
+            </Container>
+        </MainSection>
     );
 };
 
+const MainSection = styled.main`
+    padding-top: 80px;
+`
+
 const PhotoWrapper = styled.div`
     position: relative;
-    
-    &::before{
-        content: '';
-        width: 155px;
-        height: 155px;
+
+    &::before {
+        content: url("https://raw.githubusercontent.com/KaminnikAndrey/Portoflio/1ca626a6970d22f807ddb943caf7b5287a825334/src/assets/images/mainIcon.svg");
+        width: 160px;
+        height: 160px;
         position: absolute;
-        top: 0;
-        left: 0;
-        background: red;
+        top: 80px;
+        left: -5px;
+        z-index: -1;
+    }
+
+    &::after {
+        content: url("https://raw.githubusercontent.com/KaminnikAndrey/Portoflio/1ca626a6970d22f807ddb943caf7b5287a825334/src/assets/images/Dots.svg");
+        width: 85px;
+        height: 85px;
+        position: absolute;
+        bottom: 55px;
+        right: 15px;
+        z-index: 1;
     }
 `
 
