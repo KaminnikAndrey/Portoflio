@@ -5,14 +5,17 @@ import {Menu} from "../../components/menu/Menu";
 import {Container} from "../../components/Container";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import {myTheme} from "../../styles/Theme.styled";
+import {MobileMenu} from "../../components/menu/MobileMenu";
 
 export const Header = () => {
     return (
         <StyledHeader>
             <Container>
+
                 <FlexWrapper justify={'space-between'}>
                     <Logo/>
                     <Menu/>
+                    <MobileMenu/>
                 </FlexWrapper>
             </Container>
         </StyledHeader>
@@ -20,7 +23,6 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-    //margin-top: 30px;
     position: fixed;
     top: 0;
     left: 0;
@@ -30,4 +32,5 @@ const StyledHeader = styled.header`
     width: 100%;
     height: 80px;
     padding-top: 30px;
+
 `

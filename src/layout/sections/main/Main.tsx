@@ -10,7 +10,7 @@ export const Main = () => {
     return (
         <MainSection>
             <Container minHeight={'420px'}>
-                <FlexWrapper justify={'space-between'} align={'center'}>
+                <FlexWrapper justify={'space-between'} align={'center'} gap={'15px'}>
                     <FlexWrapper direction={'column'}>
                         <Title>
                             <span>Elias is a</span> web designer <span>and</span> front-end developer

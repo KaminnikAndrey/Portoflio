@@ -6,7 +6,8 @@ export const myTheme = {
         purple: "rgba(199, 120, 221, 1)"
     },
     media: {
-        tablet: "screen and (max-width:768px)",
-        mobile: "screen and (max-width:576px)",
+        md: "screen and (max-width:992px)",
+        sm: "screen and (max-width:768px)",
+        xs: "screen and (max-width:576px)",
     }
 }

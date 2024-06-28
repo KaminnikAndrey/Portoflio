@@ -27,7 +27,10 @@ const StyledMenu = styled.nav`
     ul {
         display: flex;
         gap: 32px;
-
+    }
+    
+    @media ${myTheme.media.xs} {
+        display: none;
     }
 `
 const Link = styled.a`
