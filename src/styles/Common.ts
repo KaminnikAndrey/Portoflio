@@ -1,7 +1,6 @@
 import {myTheme} from "./Theme.styled";
 
 type FontPropsType = {
-    // family?: string
     weight?: number
     color?: string
     lineHeight?: number
@@ -9,7 +8,7 @@ type FontPropsType = {
     fMax?: number
 }
 
-export const font = ({weight, color,lineHeight, fMin, fMax} : FontPropsType) => `
+export const font = ({weight, color, lineHeight, fMin, fMax}: FontPropsType) => `
     font-weight: ${weight || 400};
     color: ${color || myTheme.colors.grey};
     line-height: ${lineHeight || 1.3};
