@@ -5,16 +5,18 @@ import {myTheme} from "../../styles/Theme.styled";
 type BtnPropsType = {
     text: string
     border?: 'none' | 'gray' | 'purple'
+    isAdaptiveAbsence?: boolean
 }
 
 type LinkPropsType = {
     border?: 'none' | 'gray' | 'purple'
+    isAdaptiveAbsence?: boolean
 }
 
-export const Btn = ({text, border = 'purple'}: BtnPropsType) => {
+export const Btn = ({text, border = 'purple', isAdaptiveAbsence}: BtnPropsType) => {
 
     return (
-        <Link href={'#'} border={border}>{text}</Link>
+        <Link href={'#'} border={border} isAdaptiveAbsence={isAdaptiveAbsence}>{text}</Link>
     );
 };
 
@@ -36,5 +38,9 @@ const Link = styled.a<LinkPropsType>`
 
     &:hover{
         transform: ${props => props.border === 'none' ? 'translateY(-2px)' : 'none'};
+    }
+
+    @media ${myTheme.media.xs} {
+        display: ${props => props.isAdaptiveAbsence ? 'none' : 'block'};
     }
 `

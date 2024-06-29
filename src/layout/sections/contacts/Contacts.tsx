@@ -12,11 +12,11 @@ export const Contacts = () => {
         <ContactsSection>
             <Container>
                 <SectionTitle text={'contacts'} lineWidth={'190px'}/>
-                <FlexWrapper justify={'space-between'} margin={'45px 0 0 0'}>
+                <FlexWrapper justify={'space-between'} padding={'45px 0 0 0'} isAdaptiveColumnSM={true} gap={'20px'} paddingSm={'25px 0 0 0'}>
                     <Text>I’m interested in freelance opportunities. However, if you have other request or question,
                         don’t
                         hesitate to contact me</Text>
-                    <FlexWrapper padding={'16px'} direction={'column'} border={`1px solid ${myTheme.colors.grey}`}>
+                    <FlexWrapper padding={'16px'} direction={'column'} border={`1px solid ${myTheme.colors.grey}`} isAdaptiveWidthFitContentMD={true} isAdaptiveWidthFitContentXS={true} >
                         <Title>Message me here</Title>
                         <FlexWrapper direction={'column'} gap={'8px'}>
                             <Link href={'#'}>
@@ -40,13 +40,21 @@ const ContactsSection = styled.section`
     position: relative;
 
     &::after {
-        content: url("https://raw.githubusercontent.com/KaminnikAndrey/Portoflio/1ca626a6970d22f807ddb943caf7b5287a825334/src/assets/images/Dots.svg");
+        content: url("Dots.svg");
         width: 105px;
         height: 105px;
         position: absolute;
         top: 100px;
         left: -41px;
         z-index: 1;
+        
+        @media ${myTheme.media.lg} {
+            display: none;
+        }
+    }
+
+    @media ${myTheme.media.md} {
+        padding-bottom: 70px;
     }
 `
 
@@ -55,6 +63,10 @@ const Text = styled.text`
     color: ${myTheme.colors.grey};
     max-width: 505px;
     font-size: 16px;
+    
+    @media ${myTheme.media.sm} {
+        max-width: 100%;
+    }
 `
 
 const Title = styled.span`

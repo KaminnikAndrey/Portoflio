@@ -10,15 +10,15 @@ export const Main = () => {
     return (
         <MainSection>
             <Container minHeight={'420px'}>
-                <FlexWrapper justify={'space-between'} align={'center'} gap={'15px'}>
-                    <FlexWrapper direction={'column'}>
+                <FlexWrapper justify={'space-between'} align={'center'} gap={'15px'} isAdaptiveColumnMD={true}>
+                    <FlexWrapper direction={'column'} isAdaptiveWidthFitContentMD={true}>
                         <Title>
                             <span>Elias is a</span> web designer <span>and</span> front-end developer
                         </Title>
                         <Text>
                             He crafts responsive websites where technologies meet creativity
                         </Text>
-                        <Btn text={'Contact me!!'}/>
+                        <Btn text={'Contact me!!'} isAdaptiveAbsence={true}/>
                     </FlexWrapper>
                     <div>
                         <PhotoWrapper>
@@ -41,31 +41,58 @@ const MainSection = styled.main`
 const PhotoWrapper = styled.div`
     position: relative;
 
+    @media ${myTheme.media.sm} {
+        width: fit-content;
+    }
+
     &::before {
-        content: url("https://raw.githubusercontent.com/KaminnikAndrey/Portoflio/1ca626a6970d22f807ddb943caf7b5287a825334/src/assets/images/mainIcon.svg");
+        content: url("mainIcon.svg");
         width: 160px;
         height: 160px;
         position: absolute;
         top: 80px;
         left: -5px;
         z-index: -1;
+
+        @media ${myTheme.media.xs} {
+            content: url("logoAdaptive.svg");
+            width: 105px;
+            height: 105px;
+            bottom: 40px;
+            top: 55px;
+            left: -5px;
+        }
     }
 
     &::after {
-        content: url("https://raw.githubusercontent.com/KaminnikAndrey/Portoflio/1ca626a6970d22f807ddb943caf7b5287a825334/src/assets/images/Dots.svg");
+        content: url("Dots.svg");
         width: 85px;
         height: 85px;
         position: absolute;
         bottom: 55px;
         right: 15px;
         z-index: 1;
+
+        
+            content: url("dotsAdaptive.svg");
+            width: 55px;
+            height: 55px;
+            right: 10px;
+            bottom: 40px;
+        }
     }
+    
 `
 
 const Photo = styled.img`
     width: 460px;
     height: 385px;
     object-fit: cover;
+
+    @media ${myTheme.media.xs} {
+        width: 310px;
+        height: 260px;
+    }
 `
 
 const Title = styled.h1`
@@ -95,13 +122,13 @@ const TextBold = styled.p`
     font-size: 16px;
     line-height: 1.55;
     color: ${myTheme.colors.grey};
-    margin-bottom: 25px;
     max-width: 460px;
     font-weight: 500;
-    padding: 8px 80px 8px 34px;
+    padding: 8px 8px 8px 34px;
     border: 1px solid ${myTheme.colors.grey};
     text-align: left;
     position: relative;
+    width: 400px;
 
     strong {
         font-weight: 600;
@@ -117,5 +144,13 @@ const TextBold = styled.p`
         background-color: ${myTheme.colors.purple};
         top: 11px;
         left: 10px;
+
+        @media ${myTheme.media.xs} {
+            top: 21px;
+        }
+    }
+    
+    @media ${myTheme.media.xs} {
+        width: 320px;
     }
 `

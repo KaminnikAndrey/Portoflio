@@ -3,12 +3,13 @@ import {Container} from "../../../components/Container";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import styled from "styled-components";
 import {myTheme} from "../../../styles/Theme.styled";
+import {font} from "../../../styles/Common";
 
 export const Quote = () => {
     return (
         <QuoteSection>
-            <Container maxWidth={'745px'}>
-                <FlexWrapper direction={'column'} align={'flex-end'}>
+            <Container maxWidth={'745px'} isAdaptoveWidthMD={true}>
+                <FlexWrapper direction={'column'} align={'flex-end'} isAdaptiveWidthFitContentMD={true}>
                     <Q>
                         With great power comes great electricity bill
                     </Q>
@@ -27,13 +28,22 @@ const QuoteSection = styled.section`
     position: relative;
 
     &::after {
-        content: url("https://raw.githubusercontent.com/KaminnikAndrey/Portoflio/1ca626a6970d22f807ddb943caf7b5287a825334/src/assets/images/quoteBg.svg");
+        content: url("quoteBg.svg");
         display: block;
         position: absolute;
         width: 92px;
         height: 92px;
         top: calc(110px + 15px);
         right: -10px;
+        
+        @media ${myTheme.media.md} {
+            display: none;
+        }
+    }
+
+    @media ${myTheme.media.md} {
+        padding-top: 75px;
+        padding-bottom: 50px;
     }
 `
 
@@ -51,7 +61,7 @@ const Q = styled.blockquote`
     }
 
     &::after{
-        content: url("https://raw.githubusercontent.com/KaminnikAndrey/Portoflio/1ca626a6970d22f807ddb943caf7b5287a825334/src/assets/images/quotes.svg");
+        content: url("quotes.svg");
         display: block;
         position: absolute;
         width: 40px;
@@ -66,5 +76,13 @@ const Q = styled.blockquote`
     & + &::after {
         transform: translateX(0);
         right: 15px;
+    }
+
+    @media ${myTheme.media.md} {
+        ${font({weight: 400, color: myTheme.colors.white, fMax: 24, fMin: 16})}
+    }
+    
+    @media ${myTheme.media.sm} {
+        padding: 20px;
     }
 `

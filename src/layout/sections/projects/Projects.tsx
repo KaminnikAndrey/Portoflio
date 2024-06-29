@@ -8,6 +8,7 @@ import img1 from '../../../assets/images/chertNodes.jpg'
 import img2 from '../../../assets/images/protectX.jpg'
 import img3 from '../../../assets/images/kahoot.jpg'
 import styled from "styled-components";
+import {myTheme} from "../../../styles/Theme.styled";
 
 
 type projectsListType = {
@@ -51,10 +52,10 @@ export const Projects = () => {
         <ProjectsSection>
             <Container>
                 <FlexWrapper justify={'space-between'}>
-                    <SectionTitle text={'projects'} lineWidth={'510px'}/>
+                    <SectionTitle text={'projects'} lineWidth={'510px'} isAdaptiveAbsenceLine={true}/>
                     <Btn text={'View all ~~>'} border={'none'}/>
                 </FlexWrapper>
-                <FlexWrapper margin={'50px 0 0 0 '} gap={'15px'} as={'ul'}>{project}</FlexWrapper>
+                <FlexWrapper padding={'50px 0 0 0 '} gap={'15px'} as={'ul'} isAdaptiveColumnSM={true} paddingSm={'30px 0 0 0'}>{project}</FlexWrapper>
             </Container>
         </ProjectsSection>
     );
@@ -65,12 +66,20 @@ const ProjectsSection = styled.section`
     position: relative;
     
     &::after{
-        content: url("https://raw.githubusercontent.com/KaminnikAndrey/Portoflio/1ca626a6970d22f807ddb943caf7b5287a825334/src/assets/images/projectsBg.svg");
+        content: url("projectsBg.svg");
         display: block;
         position: absolute;
         width: 155px;
         height: 155px;
         top: 270px;
         right: -80px;
+        
+        @media ${myTheme.media.lg} {
+            display: none;
+        }
+    }
+
+    @media ${myTheme.media.md} {
+        padding-bottom: 70px;
     }
 `

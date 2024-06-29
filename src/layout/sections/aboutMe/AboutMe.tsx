@@ -11,15 +11,15 @@ export const AboutMe = () => {
     return (
         <AboutMeSection>
             <Container>
-                <FlexWrapper justify={'space-between'}>
+                <FlexWrapper justify={'space-between'} isAdaptiveColumnMD={true}>
                     <div>
                         <SectionTitle text={'about-me'} lineWidth={'326px'}/>
-                        <FlexWrapper margin={'25px 0 0 0'} direction={'column'} maxWidth={'515px'}>
+                        <FlexWrapper padding={'15px 0 0 0'} direction={'column'} maxWidth={'515px'} marginMD={'0 auto'}>
                             <Text>
                                 Hello, i’m Elias!
                             </Text>
                             <Text>
-                                I’m a self-taught front-end developer based in Kyiv, Ukraine. I can develop responsive
+                                I’m a self-taught front-end developer based in Russia, Yekaterinburg. I can develop responsive
                                 websites from scratch and raise them into modern user-friendly web experiences.
                             </Text>
                             <Text>
@@ -32,6 +32,7 @@ export const AboutMe = () => {
                     </div>
                     <ImageWrapper>
                         <Image src={img}/>
+                        <span></span>
                     </ImageWrapper>
                 </FlexWrapper>
             </Container>
@@ -42,8 +43,19 @@ export const AboutMe = () => {
 const ImageWrapper = styled.div`
     position: relative;
 
+    span {
+        width: 270px;
+        height: 1px;
+        background-color: ${myTheme.colors.purple};
+        bottom: 13px;
+        left: calc(50% + 10px);
+        transform: translateX(-50%);
+        position: absolute;
+        display: block;
+    }
+
     &::after {
-        content: url("https://raw.githubusercontent.com/KaminnikAndrey/Portoflio/1ca626a6970d22f807ddb943caf7b5287a825334/src/assets/images/Dots.svg");
+        content: url("Dots.svg");
         width: 85px;
         height: 85px;
         position: absolute;
@@ -53,14 +65,27 @@ const ImageWrapper = styled.div`
     }
 
     &::before {
-        content: url("https://raw.githubusercontent.com/KaminnikAndrey/Portoflio/1ca626a6970d22f807ddb943caf7b5287a825334/src/assets/images/Dots.svg");
+        content: url("dotsRectangle.svg");
         width: 105px;
         height: 55px;
         object-fit: contain;
         position: absolute;
         display: block;
-        bottom: 175px;
-        right: -5px;
+        bottom: 185px;
+        right: 15px;
+
+        @media ${myTheme.media.xs}{
+            right: 25px;
+            bottom: 150px;
+        }
+    }
+
+    @media ${myTheme.media.md} {
+        width: fit-content;
+        margin: 0 auto;
+        span {
+            bottom: 0;
+        }
     }
 
 `
@@ -70,17 +95,21 @@ const AboutMeSection = styled.section`
     position: relative;
 
     &::after {
-        content: url("https://raw.githubusercontent.com/KaminnikAndrey/Portoflio/1ca626a6970d22f807ddb943caf7b5287a825334/src/assets/images/Dots.svg");
+        content: url("Dots.svg");
         width: 65px;
         height: 105px;
         position: absolute;
         display: block;
         top: 50%;
         right: 0;
+
+        @media ${myTheme.media.xl} {
+            display: none;
+        }
     }
 
     &::before {
-        content: url("https://raw.githubusercontent.com/KaminnikAndrey/Portoflio/1ca626a6970d22f807ddb943caf7b5287a825334/src/assets/images/projectsBg.svg");
+        content: url("projectsBg.svg");
         width: 155px;
         transform: rotate(180deg);
         height: 155px;
@@ -88,6 +117,14 @@ const AboutMeSection = styled.section`
         display: block;
         top: 200px;
         left: -90px;
+
+        @media ${myTheme.media.xl} {
+            display: none;
+        }
+    }
+
+    @media ${myTheme.media.md} {
+        padding-bottom: 70px;
     }
 `
 
@@ -95,12 +132,21 @@ const Image = styled.img`
     height: 505px;
     width: 340px;
     object-fit: contain;
+
+    @media ${myTheme.media.xs}{
+        width: 320px;
+        height: 440px;
+    }
 `
 
 const Text = styled.p`
     color: ${myTheme.colors.grey};
-    margin: 25px 0;
+    padding: 25px 0;
     font-size: 16px;
     line-height: 1.65;
     font-weight: 400;
+    
+    @media ${myTheme.media.xs} {
+        padding: 10px 0;
+    }
 `

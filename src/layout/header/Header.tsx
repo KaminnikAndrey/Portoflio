@@ -32,5 +32,10 @@ const StyledHeader = styled.header`
     width: 100%;
     height: 80px;
     padding-top: 30px;
+    
+    @media ${myTheme.media.xs} {
+        height: 80px;
+        padding-top: 20px;
+    }
 
 `

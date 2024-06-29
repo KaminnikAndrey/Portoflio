@@ -10,7 +10,7 @@ export const Footer = () => {
     return (
         <StyledFooter>
             <Container>
-                <FlexWrapper justify={'space-between'}>
+                <FlexWrapper justify={'space-between'} isAdaptiveColumnXS={true}>
                     <div>
                         <FlexWrapper gap={'25px'} margin={'0 0 15px 0 '}>
                             <Logo/>
@@ -18,7 +18,7 @@ export const Footer = () => {
                         </FlexWrapper>
                         <Title>Web designer and front-end developer</Title>
                     </div>
-                    <FlexWrapper direction={'column'} gap={'15px'}>
+                    <FlexWrapper direction={'column'} gap={'15px'} isAdaptiveWidthFitContentMD={true} isAdaptiveWidthFitContentXS={true} marginXs={'0 auto'}>
                         <BigTitle>
                             Media
                         </BigTitle>
@@ -56,13 +56,20 @@ const Title = styled.h3`
     font-size: 16px;
     font-weight: 400;
     color: ${myTheme.colors.white};
-    margin-top: 15px;
+    @media ${myTheme.media.xs} {
+        margin-bottom: 10px;
+    }
 `
 
 const BigTitle = styled.span`
     font-size: 24px;
     font-weight: 500;
     color: ${myTheme.colors.white};
+    
+    @media ${myTheme.media.xs} {
+        text-align: center;
+    }
+    
 `
 
 const Text = styled.p`
@@ -75,5 +82,9 @@ const Text = styled.p`
 const StyledFooter = styled.footer`
     border-top: 1px solid ${myTheme.colors.grey};
     padding: 30px 0;
+    
+    @media ${myTheme.media.xs} {
+        padding: 20px 0;
+    }
 `
 

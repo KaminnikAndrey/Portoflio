@@ -54,6 +54,7 @@ const Title = styled.h3`
     display: block;
     border: 1px solid ${myTheme.colors.grey};
     padding: 8px;
+    width: 100%;
 `
 
 const Name = styled.span`
