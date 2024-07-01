@@ -7,9 +7,7 @@ import {Item} from "./projectItem/Item";
 import img1 from '../../../assets/images/chertNodes.jpg'
 import img2 from '../../../assets/images/protectX.jpg'
 import img3 from '../../../assets/images/kahoot.jpg'
-import styled from "styled-components";
-import {myTheme} from "../../../styles/Theme.styled";
-
+import {S} from "./Projects_Styles"
 
 type projectsListType = {
     src: string,
@@ -39,7 +37,7 @@ const projectsList: Array<projectsListType> = [{
     btn: 1
 }]
 
-export const Projects = () => {
+export const Projects: React.FC = () => {
     const project = projectsList.map(({src, text, btn, title, name}: projectsListType) =>
         <Item src={src}
               title={title}
@@ -47,9 +45,8 @@ export const Projects = () => {
               text={text}
               btn={btn}/>
     )
-
     return (
-        <ProjectsSection>
+        <S.Projects>
             <Container>
                 <FlexWrapper justify={'space-between'}>
                     <SectionTitle text={'projects'} lineWidth={'510px'} isAdaptiveAbsenceLine={true}/>
@@ -57,29 +54,6 @@ export const Projects = () => {
                 </FlexWrapper>
                 <FlexWrapper padding={'50px 0 0 0 '} gap={'15px'} as={'ul'} isAdaptiveColumnSM={true} paddingSm={'30px 0 0 0'}>{project}</FlexWrapper>
             </Container>
-        </ProjectsSection>
+        </S.Projects>
     );
 };
-
-const ProjectsSection = styled.section`
-    padding-bottom: 105px;
-    position: relative;
-    
-    &::after{
-        content: url("projectsBg.svg");
-        display: block;
-        position: absolute;
-        width: 155px;
-        height: 155px;
-        top: 270px;
-        right: -80px;
-        
-        @media ${myTheme.media.lg} {
-            display: none;
-        }
-    }
-
-    @media ${myTheme.media.md} {
-        padding-bottom: 70px;
-    }
-`

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {myTheme} from "../styles/Theme.styled";
 
 type ContainerPropsType = {
     maxWidth?: string

@@ -6,7 +6,7 @@ import {Projects} from "./layout/sections/projects/Projects";
 import {Skills} from "./layout/sections/skills/Skills";
 import {AboutMe} from "./layout/sections/aboutMe/AboutMe";
 import {Contacts} from "./layout/sections/contacts/Contacts";
-import {Footer} from "./layout/footer/footer";
+import {Footer} from "./layout/footer/Footer";
 
 function App() {
     return (

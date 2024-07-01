@@ -24,7 +24,7 @@ type StyledIconPropsType = {
     zIndex?: string
 }
 
-export const Icon = (props: IconPropsType) => {
+export const Icon: React.FC<IconPropsType> = (props: IconPropsType) => {
     return (
         <IconStyled position={props.position} left={props.left} top={props.top} right={props.right}
                     bottom={props.bottom} zIndex={props.zIndex}>

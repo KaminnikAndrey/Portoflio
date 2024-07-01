@@ -4,7 +4,7 @@ import styled from "styled-components";
 import {myTheme} from "../../styles/Theme.styled";
 import {FlexWrapper} from "../FlexWrapper";
 
-export const Logo = () => {
+export const Logo: React.FC = () => {
     return (
         <StyledLogo href={'#'}>
             <FlexWrapper gap={'10px'} align={'center'}>
@@ -18,6 +18,7 @@ export const Logo = () => {
 const StyledLogo = styled.a`
     color: ${myTheme.colors.white};
     transition: 0.2s;
+
     span {
         font-weight: 700;
         font-size: 16px;
