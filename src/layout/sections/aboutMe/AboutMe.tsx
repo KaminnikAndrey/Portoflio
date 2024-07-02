@@ -8,7 +8,7 @@ import {S} from "./AboutMe_Styles"
 
 export const AboutMe: React.FC = () => {
     return (
-        <S.AboutMe>
+        <S.AboutMe id={"about-me"}>
             <Container>
                 <FlexWrapper justify={'space-between'} isAdaptiveColumnMD={true}>
                     <div>

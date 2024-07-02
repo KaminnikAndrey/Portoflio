@@ -3,10 +3,11 @@ import {Icon} from "../icon/Icon";
 import styled from "styled-components";
 import {myTheme} from "../../styles/Theme.styled";
 import {FlexWrapper} from "../FlexWrapper";
+import {animateScroll as scroll} from "react-scroll";
 
 export const Logo: React.FC = () => {
     return (
-        <StyledLogo href={'#'}>
+        <StyledLogo onClick={() => {scroll.scrollToTop()}}>
             <FlexWrapper gap={'10px'} align={'center'}>
                 <Icon iconId={'logo'} width={'16px'} height={'16px'}/>
                 <span>Elias</span>
@@ -18,6 +19,7 @@ export const Logo: React.FC = () => {
 const StyledLogo = styled.a`
     color: ${myTheme.colors.white};
     transition: 0.2s;
+    cursor: pointer;
 
     span {
         font-weight: 700;

@@ -7,7 +7,7 @@ import {S} from "./Main_Styles"
 
 export const Main: React.FC = () => {
     return (
-        <S.Main>
+        <S.Main id={"home"}>
             <Container minHeight={'420px'}>
                 <FlexWrapper justify={'space-between'} align={'center'} gap={'15px'} isAdaptiveColumnMD={true}>
                     <FlexWrapper direction={'column'} isAdaptiveWidthFitContentMD={true}>

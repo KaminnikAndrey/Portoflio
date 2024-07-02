@@ -46,7 +46,7 @@ export const Projects: React.FC = () => {
               btn={btn}/>
     )
     return (
-        <S.Projects>
+        <S.Projects id={"works"}>
             <Container>
                 <FlexWrapper justify={'space-between'}>
                     <SectionTitle text={'projects'} lineWidth={'510px'} isAdaptiveAbsenceLine={true}/>

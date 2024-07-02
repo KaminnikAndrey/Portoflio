@@ -8,7 +8,7 @@ import {S} from "./Contacts_Styles"
 
 export const Contacts: React.FC = () => {
     return (
-        <S.Contacts>
+        <S.Contacts id={"contacts"}>
             <Container>
                 <SectionTitle text={'contacts'} lineWidth={'190px'}/>
                 <FlexWrapper justify={'space-between'} padding={'45px 0 0 0'} isAdaptiveColumnSM={true} gap={'20px'} paddingSm={'25px 0 0 0'}>
