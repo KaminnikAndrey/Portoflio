@@ -8,8 +8,10 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
     left: 0;
     bottom: 0;
     height: calc(100vh - 50px);
-    display: none;
-
+    display: block;
+    transform: translateY(-130vh);
+    transition: 0.3s cubic-bezier(0,.02,0,.92);
+    
     ul {
         display: flex;
         gap: 32px;
@@ -19,7 +21,7 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
     }
 
     ${props => props.isOpen && css<{isOpen: boolean }>`
-        display: block
+        transform: translateY(0);
     `
 }
 `
